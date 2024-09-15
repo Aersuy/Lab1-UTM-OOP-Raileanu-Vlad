@@ -1,7 +1,8 @@
 
-#include "carte.cpp"
+#include "function.cpp"
 
 int main()
 {
+    std::vector<Student> registru;
 
 }
