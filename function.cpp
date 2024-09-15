@@ -24,7 +24,7 @@ void addPereche(std::vector<Student>& registru)
     Disciplina newDisciplina;
     std::cout << "Da numele disciplinei noi \n";
     std::cin >> newDisciplina.numePereche;
-
+    std::getchar();
     for (int i = 0; i < num; i++)
     {
         registru[i].discipline.push_back(newDisciplina);
@@ -41,7 +41,6 @@ void printDiscipline( const std::vector<Student>& registru)
 void addAbsenta(std::vector<Student> &registru, int studentId,int disciplinaId)
 {   std::string data;
     std::cout << "Da data in care a absentat \n";
-    std::getchar();
     std::getline(std::cin,data);
     registru[studentId].discipline[disciplinaId].absente.push_back(data);
     registru[studentId].discipline[disciplinaId].numAbsente++;
@@ -54,4 +53,14 @@ void printAbsente(const std::vector<Student> &registru,int studentId, int discip
         std::cout << i << ". " << registru[studentId].discipline[disciplinaId].absente[i] << '\n';
     }
     
+}
+
+void addMedie(std::vector<Student> &registru, int studentId,int disciplinaId)
+{
+    std::cout << "Da media lui " << registru[studentId].nume << ' ' << registru[studentId].prenume << " la " << registru[studentId].discipline[disciplinaId].numePereche << '\n';
+    std::cin >> registru[studentId].discipline[disciplinaId].medie;
+}
+void printMedie(const std::vector<Student> &registru, int studentId,int disciplinaId)
+{
+    std::cout << registru[studentId].nume << ' ' << registru[studentId].prenume << " are nota: " << registru[studentId].discipline[disciplinaId].medie << '\n';
 }

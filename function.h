@@ -21,6 +21,8 @@ void addStudent(std::vector<Student> &registru);
 void studentName(const std::vector<Student> &registru);
 void addPereche(std::vector<Student> &registru);
 void numeDiscipline(const std::vector<Student> &registru);
-void addAbsenta(std::vector<Student> &registru);
-void printAbsente(const std::vector<Student> &registru);
+void addAbsenta(std::vector<Student> &registru,int, int);
+void printAbsente(const std::vector<Student> &registru, int, int);
+void addMedie(std::vector<Student> &registru,int ,int);
+void printMedie(const std::vector<Student> &registru,int, int);
 
