@@ -19,4 +19,6 @@ struct Student
 } typedef Student;
 void addStudent(std::vector<Student> &registru);
 void studentName(const std::vector<Student> &registru);
+void addPereche(std::vector<Student> &registru);
+void numeDiscipline(const std::vector<Student> &registru);
 

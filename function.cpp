@@ -19,3 +19,22 @@ void studentName(const std::vector<Student>& registru)
     std::cin >> studentId;
    std::cout << registru[studentId].nume << ' ' << registru[studentId].prenume << '\n';
 }
+void addPereche(std::vector<Student>& registru)
+{   int num = registru.size();
+    Disciplina newDisciplina;
+    std::cout << "Da numele disciplinei noi \n";
+    std::cin >> newDisciplina.numePereche;
+
+    for (int i = 0; i < num; i++)
+    {
+        registru[i].discipline.push_back(newDisciplina);
+    }
+}
+void printDiscipline( const std::vector<Student>& registru)
+{
+    int num = registru[0].discipline.size();
+    for (int i = 0; i < num; i++)
+    {
+        std::cout << i << ". " << registru[0].discipline[i].numePereche << '\n';
+    }
+}

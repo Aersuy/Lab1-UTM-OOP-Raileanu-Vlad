@@ -6,4 +6,10 @@ int main()
     std::vector<Student> registru;
      addStudent(registru);
      studentName(registru);
+
+     addPereche(registru);
+     printDiscipline(registru);
+
+     addPereche(registru);
+     printDiscipline(registru);
 }
