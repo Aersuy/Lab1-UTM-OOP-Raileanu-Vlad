@@ -1,5 +1,5 @@
 
-#include "carte.h"
+#include "carte.cpp"
 
 int main()
 {
