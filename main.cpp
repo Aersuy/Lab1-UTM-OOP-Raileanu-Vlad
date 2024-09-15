@@ -10,6 +10,11 @@ int main()
      addPereche(registru);
      printDiscipline(registru);
 
-     addPereche(registru);
-     printDiscipline(registru);
+     addAbsenta(registru,0,0);
+      printAbsente(registru,0,0);
+     addAbsenta(registru,0,0);
+      printAbsente(registru,0,0);
+    
+
+    
 }

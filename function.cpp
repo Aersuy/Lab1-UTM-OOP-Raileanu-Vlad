@@ -38,3 +38,20 @@ void printDiscipline( const std::vector<Student>& registru)
         std::cout << i << ". " << registru[0].discipline[i].numePereche << '\n';
     }
 }
+void addAbsenta(std::vector<Student> &registru, int studentId,int disciplinaId)
+{   std::string data;
+    std::cout << "Da data in care a absentat \n";
+    std::getchar();
+    std::getline(std::cin,data);
+    registru[studentId].discipline[disciplinaId].absente.push_back(data);
+    registru[studentId].discipline[disciplinaId].numAbsente++;
+}
+void printAbsente(const std::vector<Student> &registru,int studentId, int disciplinaId)
+{   std::cout << registru[studentId].discipline[disciplinaId].numAbsente << " absente \n";
+    int num = registru[studentId].discipline[disciplinaId].absente.size();
+    for (int i = 0; i < num; i++)
+    {
+        std::cout << i << ". " << registru[studentId].discipline[disciplinaId].absente[i] << '\n';
+    }
+    
+}
