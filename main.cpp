@@ -5,8 +5,7 @@ int main()
 { 
     std::vector<Student> registru;
     int alegere = 1;
-    int alegere2 = 1;
-    int alegere3 = 1;
+    int alegere2,alegere3;
     int studentId,disciplinID;
 
     while (alegere != 0)
@@ -36,6 +35,7 @@ int main()
         case 6:
           std::cout << "Da ID-ul studentului, (din lista) \n";
           std::cin >> studentId;
+          alegere2 = 1;
           while (alegere2 != 0)
           {
             studentMenu();
@@ -58,6 +58,7 @@ int main()
              case 5:
                   std::cout << "Alege o anumita disciplina, dupa id \n";
                   std::cin >> disciplinID;
+                  alegere3 = 1;
                   while (alegere3 != 0)
                   {
                     disciplinaMenu();

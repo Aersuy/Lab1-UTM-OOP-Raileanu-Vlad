@@ -50,11 +50,11 @@ void addAbsenta(std::vector<Student> &registru, int studentId,int disciplinaId)
     registru[studentId].numAbsente++;
 }
 void printAbsente(const std::vector<Student> &registru,int studentId, int disciplinaId)
-{   std::cout << registru[studentId].discipline[disciplinaId].numAbsente << " absente \n";
+{   std::cout << registru[studentId].discipline[disciplinaId].numAbsente+1 << " absente \n";
     int num = registru[studentId].discipline[disciplinaId].absente.size();
     for (int i = 0; i < num; i++)
     {
-        std::cout << i + 1 << ". " << registru[studentId].discipline[disciplinaId].absente[i] << '\n';
+        std::cout << i << ". " << registru[studentId].discipline[disciplinaId].absente[i] << '\n';
     }
     
 }
