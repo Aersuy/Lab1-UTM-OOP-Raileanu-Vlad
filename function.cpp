@@ -22,17 +22,17 @@ void addPereche(std::vector<Student>& registru)
     Disciplina newDisciplina;
     std::cout << "Da numele disciplinei noi \n";
     std::cin >> newDisciplina.numePereche;
-    for (int i = 0; i < num; i++)
+    for (int iterator = 0; iterator < num; iterator++)
     {
-        registru[i].discipline.push_back(newDisciplina);
+        registru[iterator].discipline.push_back(newDisciplina);
     }
 }
 void printDiscipline( const std::vector<Student>& registru)
 {
     int num = registru[0].discipline.size();
-    for (int i = 0; i < num; i++)
+    for (int iterator = 0; iterator < num; iterator++)
     {
-        std::cout << i << ". " << registru[0].discipline[i].numePereche << '\n';
+        std::cout << iterator << ". " << registru[0].discipline[iterator].numePereche << '\n';
     }
 }
 void numeDiscipline(const std::vector<Student>& registru, int studentId,int disciplinaId)
@@ -52,9 +52,9 @@ void addAbsenta(std::vector<Student> &registru, int studentId,int disciplinaId)
 void printAbsente(const std::vector<Student> &registru,int studentId, int disciplinaId)
 {   std::cout << registru[studentId].discipline[disciplinaId].numAbsente+1 << " absente \n";
     int num = registru[studentId].discipline[disciplinaId].absente.size();
-    for (int i = 0; i < num; i++)
+    for (int iterator = 0; iterator < num; iterator++)
     {
-        std::cout << i << ". " << registru[studentId].discipline[disciplinaId].absente[i] << '\n';
+        std::cout << iterator << ". " << registru[studentId].discipline[disciplinaId].absente[iterator] << '\n';
     }
     
 }
@@ -75,9 +75,9 @@ void calcMedie(std::vector<Student> &registru, int studentId)
     int max = registru[studentId].discipline.size();
     double sum = 0;
 
-    for (int i = 0; i < max; i++)
+    for (int iterator = 0; iterator < max; iterator++)
     {
-        sum += registru[studentId].discipline[i].medie;
+        sum += registru[studentId].discipline[iterator].medie;
     }
     registru[studentId].medie = sum / registru[studentId].discipline.size();
     
@@ -85,10 +85,10 @@ void calcMedie(std::vector<Student> &registru, int studentId)
 void studentList(std::vector<Student> &registru)
 {
    int max = registru.size();
-   for (int i = 0; i < max; i++)
+   for (int iterator = 0; iterator < max; iterator++)
    {
-    std::cout << i << ". ";
-    studentName(registru,i);
+    std::cout << iterator << ". ";
+    studentName(registru,iterator);
    }
    
 
@@ -96,14 +96,14 @@ void studentList(std::vector<Student> &registru)
 
 void highestMedie(const std::vector<Student> &registru)
 {
-    int i, ordHighest;
+    int iterator, ordHighest;
     double bestMedie = 0;
-    for ( i = 0; i < registru.size(); i++)
+    for ( iterator = 0; iterator < registru.size(); iterator++)
     {
-        if (registru[i].medie > bestMedie)
+        if (registru[iterator].medie > bestMedie)
         {
-            bestMedie = registru[i].medie;
-            ordHighest = i;
+            bestMedie = registru[iterator].medie;
+            ordHighest = iterator;
         }
         
     }
@@ -114,14 +114,14 @@ void highestMedie(const std::vector<Student> &registru)
 
 void highestAbsente(const std::vector<Student> & registru)
 {
-    int i, ordHighest, highest;
+    int iterator, ordHighest, highest;
     highest = 0;
-      for ( i = 0; i < registru.size(); i++)
+      for ( iterator = 0; iterator < registru.size(); iterator++)
     {
-        if (registru[i].numAbsente > highest)
+        if (registru[iterator].numAbsente > highest)
         {
-            highest = registru[i].numAbsente;
-            ordHighest = i;
+            highest = registru[iterator].numAbsente;
+            ordHighest = iterator;
         }
         
     }
