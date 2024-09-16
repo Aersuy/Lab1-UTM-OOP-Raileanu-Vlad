@@ -25,11 +25,11 @@ int main()
          addPereche(registru);
         break;
         case 4:
-
+         highestMedie(registru);
         break;
 
         case 5:
-
+         highestAbsente(registru);
         break;
 
         case 6:

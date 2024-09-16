@@ -93,6 +93,41 @@ void studentList(std::vector<Student> &registru)
    
 
 }
+
+void highestMedie(const std::vector<Student> &registru)
+{
+    int i, ordHighest;
+    double bestMedie = 0;
+    for ( i = 0; i < registru.size(); i++)
+    {
+        if (registru[i].medie > bestMedie)
+        {
+            bestMedie = registru[i].medie;
+            ordHighest = i;
+        }
+        
+    }
+    studentName(registru,ordHighest);
+    std::cout << "Are cea mai mare medie generala : " << registru[ordHighest].medie << '\n';
+    
+}
+
+void highestAbsente(const std::vector<Student> & registru)
+{
+    int i, ordHighest, highest;
+    highest = 0;
+      for ( i = 0; i < registru.size(); i++)
+    {
+        if (registru[i].numAbsente > highest)
+        {
+            highest = registru[i].numAbsente;
+            ordHighest = i;
+        }
+        
+    }
+     studentName(registru,ordHighest);
+    std::cout << "Are cele mai multe absente : " << registru[ordHighest].numAbsente << '\n';
+}
 void mainMenu()
 {
     std::cout << "Apasa 1 pentru a adauga un student now \n";
@@ -100,7 +135,8 @@ void mainMenu()
     std::cout << "Apasa 3 pentru a adauga o pereche noua \n";
     std::cout << "Apasa 4 pentru a gasi studentul cu cea mai mare medie \n";
     std::cout << "Apasa 5 pentru a gasi studentul cu cele mai multe absente \n";
-    std::cout << "Apasa 6 pentru a intra in meniul unui anumit student (cu id-ul) \n \n ";
+    std::cout << "Apasa 6 pentru a intra in meniul unui anumit student (cu id-ul) \n ";
+    std::cout << "Apasa 0 pentru a iesi din program \n \n";
 }
 void studentMenu()
 {
@@ -117,5 +153,6 @@ void disciplinaMenu()
     std::cout << "Apasa 2 pentru a adauga media studentului la perechea aceasta \n";
     std::cout << "Apasa 3 pentru a citi mediea studentului la perechea aceasta \n";
     std::cout << "Apasa 4 pentru a adauga o absenta \n";
-    std::cout << "Apasa 5 pentru a citi numarul de absente la perechea aceasta \n \n";
+    std::cout << "Apasa 5 pentru a citi numarul de absente la perechea aceasta \n";
+    std::cout << "Apasa 0 pentru a iesi in meniul anterior \n \n";
 }

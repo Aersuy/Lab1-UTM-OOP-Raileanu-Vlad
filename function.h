@@ -30,7 +30,8 @@ void printAbsente(const std::vector<Student> &registru, int, int);
 void addMedie(std::vector<Student> &registru,int ,int);
 void printMedie(const std::vector<Student> &registru,int, int);
 void calcMedie(std::vector<Student> &registru,int);
-
+void highestMedie(const std::vector<Student> &registru);
+void highestAbsente(const std::vector<Student> &registru);
 
 void mainMenu();
 void studentMenu();
