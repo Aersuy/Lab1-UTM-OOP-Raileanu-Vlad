@@ -4,20 +4,26 @@
 int main()
 { 
     std::vector<Student> registru;
-     addStudent(registru);
-     studentName(registru);
+    int alegere = 1;
 
-     addStudent(registru);
-     studentName(registru);
-
-     addPereche(registru);
-     printDiscipline(registru);
-
-     addMedie(registru,0,0);
-     printMedie(registru,0,0);
-     
-     addMedie(registru,1,0);
-     printMedie(registru,1,0);
+    while (alegere != 0)
+    {
+        mainMenu();
+        std::cin >> alegere;
+        switch (alegere)
+        {
+        case 1:
+            addStudent(registru);
+            break;
+        case 2:
+           studentList(registru);
+        break;
+        
+        default:
+            break;
+        }
+    }
+    
     
 
     

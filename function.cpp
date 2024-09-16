@@ -13,10 +13,8 @@ void addStudent(std::vector<Student> &registru)
     registru.push_back(newStudent);
 
 }
-void studentName(const std::vector<Student>& registru)
-{   int studentId;
-    std::cout << "Da id-ul studentului, lista incepe de la 0 \n ";
-    std::cin >> studentId;
+void studentName(const std::vector<Student>& registru,int studentId)
+{
    std::cout << registru[studentId].nume << ' ' << registru[studentId].prenume << '\n';
 }
 void addPereche(std::vector<Student>& registru)
@@ -63,4 +61,53 @@ void addMedie(std::vector<Student> &registru, int studentId,int disciplinaId)
 void printMedie(const std::vector<Student> &registru, int studentId,int disciplinaId)
 {
     std::cout << registru[studentId].nume << ' ' << registru[studentId].prenume << " are nota: " << registru[studentId].discipline[disciplinaId].medie << '\n';
+}
+void calcMedie(std::vector<Student> &registru, int studentId)
+{
+    int max = registru[studentId].discipline.size();
+    double sum = 0;
+
+    for (int i = 0; i < max; i++)
+    {
+        sum += registru[studentId].discipline[i].medie;
+    }
+    registru[studentId].medie = sum / registru[studentId].discipline.size();
+    
+}
+void studentList(std::vector<Student> &registru)
+{
+   int max = registru.size();
+   for (int i = 0; i < max; i++)
+   {
+    std::cout << i << ". ";
+    studentName(registru,i);
+   }
+   
+
+}
+void mainMenu()
+{
+    std::cout << "Apasa 1 pentru a adauga un student now \n";
+    std::cout << "Apasa 2 pentru a arata lista de studenti \n";
+    std::cout << "Apasa 3 pentru a adauga o pereche noua \n";
+    std::cout << "Apasa 4 pentru a gasi studentul cu cea mai mare medie \n";
+    std::cout << "Apasa 5 pentru a gasi studentul cu cele mai multe absente \n";
+    std::cout << "Apasa 6 pentru a intra in meniul unui anumit student (cu id-ul) \n \n ";
+}
+void studentMenu()
+{
+    std::cout << "Apasa 1 pentru a citi numele studentului \n";
+    std::cout << "Apasa 2 pentru a printa lista de discipline la care studentul participa \n";
+    std::cout << "Apasa 3 pentru a printa media generala a studentului \n";
+    std::cout << "Apasa 4 pentru a printa numarul de absente totale ale studentului \n";
+    std::cout << "Apasa 5 pentru a alege o anumita disciplina(folosind numarul de ordine, incepand cu 0) \n";
+    std::cout << "Apasa 0 a iesi in meniul anterior \n \n";
+}
+void disciplinaMenu()
+{
+    std::cout << "Apasa 1 pentru a citi numele perechi \n";
+    std::cout << "Apasa 2 pentru a adauga media studentului la perechea aceasta \n";
+    std::cout << "Apasa 3 pentru a citi mediea studentului la perechea aceasta \n";
+    std::cout << "Apasa 4 pentru a adauga o absenta \n";
+    std::cout << "Apasa 5 pentru a citi numarul de absente la perechea aceasta \n \n";
 }
